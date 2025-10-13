@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+build/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Temporary or dev files
+notes.txt
+structure.txt
+test-suite/
+
+# Editor-specific
+.vscode/
+.idea/
+*.swp
