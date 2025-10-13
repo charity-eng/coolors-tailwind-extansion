@@ -1,0 +1,17 @@
+{
+  "name": "coolors-tailwind-extension",
+  "version": "1.0.0",
+  "description": "",
+  "type":"module",
+  "main": "popup.js",
+  "devDependencies": {
+    "esbuild": "^0.25.10"
+  },
+  "scripts": {
+    "build": "node build.js",
+     "structure": "bash -c 'find . -maxdepth 4 \\( -name \"node_modules\" -o -name \".git\" -o -name \".next\" -o -name \".husky\" \\) -prune -o -not -name \".\" -print | sed \"s/[^/]*\\//|  /g\" > structure.txt && echo \"Project structure saved to structure.txt\"'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

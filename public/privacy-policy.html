@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Privacy Policy - Coolors → Tailwind CSS</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body class="page">
+  <div class="page-header">
+    <h1>Privacy Policy</h1>
+    <p>Coolors → Tailwind CSS Extension</p>
+  </div>
+ 
+  <div class="content">
+    <p class="date"><strong>Last Updated:</strong> October 13, 2025</p>
+   
+    <h2>Overview</h2>
+    <p>The Coolors → Tailwind CSS extension ("we", "our", or "the Extension") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our browser extension.</p>
+   
+    <h2>Information We Collect</h2>
+    <p><strong>We do not collect, store, or transmit any personal information.</strong> The Extension operates entirely locally in your browser and does not communicate with external servers.</p>
+   
+    <p>The Extension only accesses:</p>
+    <ul>
+      <li><strong>Active Tab URL:</strong> To detect when you're on coolors.co and extract color palette information from the page</li>
+      <li><strong>Page Content:</strong> To read color values from coolors.co palette URLs</li>
+    </ul>
+   
+    <h2>How We Use Information</h2>
+    <p>All processing happens locally in your browser:</p>
+    <ul>
+      <li>Color palette URLs are parsed to extract color values</li>
+      <li>Colors are converted to Tailwind CSS format</li>
+      <li>Results are displayed within the extension popup</li>
+      <li>No data is sent to external servers or third parties</li>
+    </ul>
+   
+    <h2>Data Storage</h2>
+    <p>The Extension may store your preferences locally in your browser using browser storage APIs. This data includes:</p>
+    <ul>
+      <li>Saved color palettes (if applicable)</li>
+      <li>Extension settings and preferences</li>
+    </ul>
+   
+    <p>This data remains on your device and is never transmitted elsewhere. You can clear this data at any time by removing the extension.</p>
+   
+    <h2>Third-Party Services</h2>
+    <p>The Extension does not integrate with any third-party analytics, tracking, or advertising services. We do not use cookies or similar tracking technologies.</p>
+   
+    <h2>Permissions</h2>
+    <p>The Extension requests the following browser permissions:</p>
+    <ul>
+      <li><strong>activeTab:</strong> To read the current tab's URL and content when you click the extension icon</li>
+      <li><strong>storage:</strong> To save your preferences locally in your browser</li>
+    </ul>
+   
+    <p>These permissions are used solely for the Extension's core functionality and not for any tracking or data collection purposes.</p>
+   
+    <h2>Children's Privacy</h2>
+    <p>The Extension does not knowingly collect information from children under 13. The Extension is intended for general audiences and does not target children.</p>
+   
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be reflected in the "Last Updated" date at the top of this policy. Continued use of the Extension after changes constitutes acceptance of the updated policy.</p>
+   
+    <h2>Contact</h2>
+    <p>If you have questions about this Privacy Policy, please contact us through the browser extension store where you downloaded the Extension.</p>
+   
+    <h2>Your Rights</h2>
+    <p>Since we don't collect personal data, there is no personal information to access, modify, or delete. You can remove all local data by uninstalling the Extension from your browser.</p>
+  </div>
+ 
+  <button class="back-link" id="backBtn">← Back to Extension</button>
+  <script>
+    document.getElementById('backBtn').addEventListener('click', () => {
+      window.close();
+    });
+  </script>
+</body>
+</html>
