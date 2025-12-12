@@ -2,16 +2,28 @@
   "name": "coolors-tailwind-extension",
   "version": "1.0.0",
   "description": "",
-  "type":"module",
+  "type": "module",
   "main": "popup.js",
   "devDependencies": {
-    "esbuild": "^0.25.10"
+    "esbuild": "^0.27.1"
   },
   "scripts": {
-    "build": "node build.js",
-     "structure": "bash -c 'find . -maxdepth 4 \\( -name \"node_modules\" -o -name \".git\" -o -name \".next\" -o -name \".husky\" \\) -prune -o -not -name \".\" -print | sed \"s/[^/]*\\//|  /g\" > structure.txt && echo \"Project structure saved to structure.txt\"'"
+    "dev": "node build.js",
+    "watch": "node build.js --watch",
+    "build": "node build.js --prod",
+    "version:patch": "npm version patch --no-git-tag-version",
+    "version:minor": "npm version minor --no-git-tag-version",
+    "version:major": "npm version major --no-git-tag-version",
+    "publish:patch": "npm run version:patch && npm run sync-version && npm run build",
+    "publish:minor": "npm run version:minor && npm run sync-version && npm run build",
+    "publish:major": "npm run version:major && npm run sync-version && npm run build",
+    "sync-version": "node -e \"const pkg=require('./package.json'); const manifest=require('./public/manifest.json'); manifest.version=pkg.version; require('fs').writeFileSync('public/manifest.json', JSON.stringify(manifest, null, 2))\"",
+    "structure": "bash -c 'find . -maxdepth 4 \\( -name \"node_modules\" -o -name \".git\" -o -name \".next\" -o -name \".husky\" \\) -prune -o -not -name \".\" -print | sed \"s/[^/]*\\//|  /g\" > structure.txt && echo \"Project structure saved to structure.txt\"'"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
 }
