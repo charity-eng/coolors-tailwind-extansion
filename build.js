@@ -15,6 +15,20 @@ const buildOptions = {
   format: 'esm',
 }
 
+// Helper to sync public files to both dist and docs
+function syncPublicFiles() {
+  // Copy to dist (for extension)
+  mkdirSync('dist', { recursive: true })
+  cpSync('public', 'dist', { recursive: true })
+  console.log('✅ Files copied to dist/')
+
+  // Copy docs files to docs folder (for GitHub Pages)
+  mkdirSync('docs', { recursive: true })
+  cpSync('public/privacy-policy.html', 'docs/privacy-policy.html')
+  cpSync('public/terms-of-use.html', 'docs/terms-of-use.html')
+  console.log('✅ Docs synced to docs/ folder')
+}
+
 if (isWatch) {
   // Watch mode for development
   const ctx = await build({
@@ -26,8 +40,7 @@ if (isWatch) {
   console.log('👀 Watching for changes...')
 
   // Copy public files initially
-  mkdirSync('dist', { recursive: true })
-  cpSync('public', 'dist', { recursive: true })
+  syncPublicFiles()
   console.log(
     '✅ Initial setup complete. Reload extension in chrome://extensions'
   )
@@ -37,9 +50,7 @@ if (isWatch) {
     .then(() => {
       console.log('✅ JS built successfully.')
 
-      mkdirSync('dist', { recursive: true })
-      cpSync('public', 'dist', { recursive: true })
-      console.log('✅ Manifest, Icons and HTML copied.')
+      syncPublicFiles()
 
       if (isProd) {
         createZip()

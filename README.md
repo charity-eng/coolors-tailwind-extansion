@@ -9,7 +9,7 @@ Fast and simple Chrome extension that converts Coolors.co hex colors to their cl
 1. **Clone and install dependencies:**
 
    ```bash
-   git clone https://github.com/charity-eng/coolors-tailwind-extansion.git
+   git clone https://github.com/charity-eng/coolors-tailwind-extension.git
    cd coolors-tailwind-extension
    npm install
    ```
