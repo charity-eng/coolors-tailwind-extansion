@@ -26,6 +26,7 @@ function syncPublicFiles() {
   mkdirSync('docs', { recursive: true })
   cpSync('public/privacy-policy.html', 'docs/privacy-policy.html')
   cpSync('public/terms-of-use.html', 'docs/terms-of-use.html')
+  cpSync('public/popup.css', 'docs/popup.css')
   console.log('✅ Docs synced to docs/ folder')
 }
 
